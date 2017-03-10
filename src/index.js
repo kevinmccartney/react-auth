@@ -10,8 +10,8 @@ import rootReducer from './reducers';
 import AppWrapper from './containers/AppWrapper';
 
 const enhancer = compose(
-  composeWithDevTools(),
-  persistState()
+  composeWithDevTools()
+  // persistState()
 );
 
 const store = createStore(rootReducer, enhancer);

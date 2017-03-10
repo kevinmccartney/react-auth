@@ -1,26 +1,65 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
+class renderField extends Component {
+
+  handleFocus() {
+    this.setState({
+      hasFocus: true
+    })
+  }
+
+  handleBlur() {
+
+  }
+
+  handleChange() {
+
+  }
+
+  render() {
+    const {
+      type,
+      meta,
+      label,
+      input
+    } = this.props;
+
+    return (
+      <div>
+      {!meta.pristine && meta.active && <label>{label}</label>}
+        <input {...input} type={type} placeholder={label} className="form-control"/>
+      </div>
+    );
+  }
+}
+
 class RegisterForm extends Component {
+
   render() {
     return (
-      <div className="register-form">
-        <h3>Register</h3>
-        <form onSubmit={this.props.handleSubmit}>
-          <div>
-            <label>First Name</label>
-            <Field type="text" name="firstName" component="input" placeholder="first name"/>
-          </div>
-          <div>
-            <label>Last Name</label>
-            <Field name="lastName" component="input" type="text" placeholder="last name"/>
-          </div>
-          <div>
-            <label>Email</label>
-            <Field name="email" component="input" type="email" placeholder="email"/>
-          </div>
-          <button type="submit">Submit</button>
-        </form>
+      <div className="register-form card">
+        <div className="card-block">
+          <h4 className="card-title text-center">Register</h4>
+          <form onSubmit={this.props.handleSubmit}>
+            <div className="form-group">
+              <Field className="form-control" name="email" label="email" component={renderField} type="email" />
+            </div>
+            <div className="form-group">
+              <Field className="form-control" name="userName" label="user name" component={renderField} type="text" />
+            </div>
+            <div className="form-group">
+              <Field className="form-control" name="password" label="password" component={renderField} type="text" />
+            </div>
+            <div className="form-group">
+              <Field className="form-control" name="firstName" label="first name" component={renderField} type="text"/>
+            </div>
+            <div className="form-group">
+              <Field className="form-control" name="lastName" label="last name" component={renderField} type="text" />
+            </div>
+            <button className="btn btn-primary" type="submit">Submit</button>
+          </form>
+        </div>
       </div>
     );
   }

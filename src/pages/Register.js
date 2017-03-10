@@ -9,7 +9,10 @@ class Register extends Component {
 
   render() {
     return (
-      <RegisterForm onSubmit={this.handleSubmit} />
+      <div className="app--register">
+        <h1 className="register--cta">Hello world, this is an app!</h1>
+        <RegisterForm onSubmit={this.handleSubmit} />
+      </div>
     );
   }
 }

@@ -4,9 +4,10 @@ import Register from '../pages/Register';
 
 const App = (props) => {
   return (
-    <div className="AppWrapper">
-      <h1>Hello world, this is an app!</h1>
-      { props.children }
+    <div className="app--wrapper row align-items-center justify-content-center">
+      <div className="app--inner">
+        { props.children }
+      </div>
     </div>
   );
 }
