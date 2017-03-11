@@ -27,7 +27,7 @@ class renderField extends Component {
 
     return (
       <div>
-      {!meta.pristine && meta.active && <label>{label}</label>}
+      {!meta.pristine && meta.active && <label className="animated rotateIn">{label}</label>}
         <input {...input} type={type} placeholder={label} className="form-control"/>
       </div>
     );
