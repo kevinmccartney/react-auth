@@ -8,3 +8,12 @@ body,
 body {
   background-color: #f7f7f9;
 }
+
+.app--inner {
+  padding: 5rem;
+}
+
+.register--switch-view,
+.login--switch-view {
+    margin-top: 5rem;
+}
